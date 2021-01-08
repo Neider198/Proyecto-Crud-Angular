@@ -1,0 +1,31 @@
+<mat-card style="width: 50%;margin:auto">
+  <form  (ngSubmit)="estadoEditar ? editar() : agregar()" class="example-form">
+    <mat-card-content>
+      <table class="example-full-width" cellspacing="0">
+         <caption> <h1>{{titulo}} Sexo</h1> </caption>
+         <br>
+         <tr>
+           <td>
+             <mat-form-field class="example-full-width">
+                <mat-label>Sexo</mat-label>
+                <input matInput name="nombre" [(ngModel)]="sexo.nombre">
+             </mat-form-field>
+           </td>
+         </tr>
+       </table>
+      </mat-card-content>
+      <mat-card-actions align="center"  >
+        <button routerLink='/tipo-identificacion' mat-button mat-raised-button color="warn">
+          <mat-icon>cancel</mat-icon>
+          Cancelar
+        </button>
+        <button type="submit" mat-button mat-raised-button color="{{color}}">
+          <mat-icon>save</mat-icon>
+          {{btnTitulo}}
+        </button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+   
+
+   

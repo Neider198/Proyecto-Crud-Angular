@@ -1,0 +1,87 @@
+ <mat-card style="width: 50%;margin:auto">
+   <form  (ngSubmit)="estadoEditar ? editar() : agregar()" class="example-form">
+      <mat-card-content>
+       <table class="example-full-width" cellspacing="0">
+          <caption> <h1>{{titulo}} Usuario</h1> </caption>
+          <br>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Tipo Identificacion</mat-label>
+                <input type="text" 
+                       [(ngModel)]="usuarios.tipoidentificacion" 
+                       name="tipoidentificacion"  
+                       matInput 
+                       [formControl]="myControl" 
+                       [matAutocomplete]="auto" >
+                <mat-autocomplete  #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option.id" >
+                    {{option.nombre}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Nº Identificacion</mat-label>
+                <input matInput name="identificacion" [(ngModel)]="usuarios.identificacion">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput name="nombres" [(ngModel)]="usuarios.nombres">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Apellidos</mat-label>
+                <input matInput name="apellidos" [(ngModel)]="usuarios.apellidos">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Sexo </mat-label>
+                <mat-select name="sexo" [(ngModel)]="usuarios.sexo">
+                  <mat-option *ngFor="let sexo of sexos" value="{{sexo.id}}">
+                    {{sexo.nombre}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label>Telefono</mat-label>
+                <input matInput name="telefono" [(ngModel)]="usuarios.telefono">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <mat-form-field class="example-full-width">
+                <mat-label>Direccion</mat-label>
+                <input matInput name="direccion" [(ngModel)]="usuarios.direccion">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </mat-card-content>
+      <mat-card-actions align="center"  >
+        <button routerLink='/usuario' mat-button mat-raised-button color="warn">
+          <mat-icon>cancel</mat-icon>
+          Cancelar
+        </button>
+        <button type="submit" mat-button mat-raised-button color="{{color}}">
+          <mat-icon>save</mat-icon>
+          {{btnTitulo}}
+        </button>
+      </mat-card-actions>
+    </form>
+</mat-card>
+    
+
+    

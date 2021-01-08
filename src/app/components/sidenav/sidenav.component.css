@@ -1,0 +1,28 @@
+mat-sidenav-container{
+  height: 90%;
+}
+/* mat-sidenav-content{
+  padding-left:30px;
+} */
+mat-icon{
+  padding-left: 10px;
+}
+mat-nav-list{
+  width: 200px;
+}
+mat-sidenav{
+  background-color: #f7f7f7;
+}
+mat-icon{
+  font-size: 18px;
+  position: relative;
+  top: 2px;
+}
+mat-sidenav-content{
+  padding: 20px;
+}
+
+mat-card{
+  min-height: 650px;
+  background-color: #f7f7f7;
+}

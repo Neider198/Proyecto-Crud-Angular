@@ -1,0 +1,10 @@
+<div mat-dialog-content>
+  <mat-toolbar>
+    <p>¿Esta seguro que desea eliminar este registro?</p>
+  </mat-toolbar>
+  
+</div>
+<div mat-dialog-actions align=center>
+  <button mat-button mat-raised-button color="primary" (click)="noClick()">NO</button>
+  <button mat-button mat-raised-button color="warn" [mat-dialog-close]="true" cdkFocusInitial>SI</button>
+</div>

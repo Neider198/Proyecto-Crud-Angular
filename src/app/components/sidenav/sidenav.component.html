@@ -1,0 +1,19 @@
+<app-header [sidenav]="sidenav"></app-header>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened >
+    <mat-nav-list>
+      <div *ngFor="let menu of menus">
+        <mat-list-item  *ngIf="menu.id == 1"  
+                        color="primary" 
+                        routerLink="{{menu.url}}"> 
+          <mat-icon color="primary">stars</mat-icon> {{menu.nombre}}  
+        </mat-list-item>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-card>
+      <router-outlet></router-outlet>
+    </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>

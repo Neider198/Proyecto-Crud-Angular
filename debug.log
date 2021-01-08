@@ -1,0 +1,4 @@
+[1016/221722.814:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1018/074359.592:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\neide\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\fdccce70-205d-47f3-bc05-ef6b26efc204: El sistema no puede encontrar la ruta especificada. (0x3)
+[1018/205107.071:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1019/140026.396:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::LDR_DATA_TABLE_ENTRY<crashpad::process_types::internal::Traits64>]: Solo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)

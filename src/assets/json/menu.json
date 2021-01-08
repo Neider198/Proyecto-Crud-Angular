@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "nombre":"Inicio",
+    "url": "/inicio"
+  },
+  {
+    "id": 1,
+    "nombre":"Personas",
+    "url": "/usuario"
+  },
+  {
+    "id": 1,
+    "nombre":"Identificacion",
+    "url": "/tipo-identificacion"
+  },
+  {
+    "id": 1,
+    "nombre":"Sexo",
+    "url": "/sexo"
+  }
+]

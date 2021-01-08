@@ -1,0 +1,7 @@
+.btn-agregar-fijo{
+  position: fixed;
+  bottom: 8%;
+  right: 2%;
+  width: 70px;
+  height: 70px;
+}
