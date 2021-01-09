@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class SexoService {
 
-  URL_API = 'http://localhost:44319/api';
+  URL_API = 'https://localhost:44319/api';
   constructor(private http:HttpClient) { }
 
   obtenerSexos(){
