@@ -14,11 +14,7 @@ import { CrearTipoIdentificacionComponent } from '../crear-tipo-identificacion/c
 export class ListarTipoIdentificacionComponent implements OnInit {
   displayedColumns: string[] = ['id', 'tipoidentificacion', 'acciones'];
   dataSource:any;
-  a;
-  tipoIdentificion = {
-    id:'',
-    nombre:'',
-  };
+  
   constructor(private tipoIdentificacionService:TipoIdentificacionService, public dialog: MatDialog, private crearTipoIdentificacionComponent:CrearTipoIdentificacionComponent ) { }
 
   ngOnInit(): void {
@@ -46,7 +42,7 @@ export class ListarTipoIdentificacionComponent implements OnInit {
         .eliminarTipoIdentificacion(id)
         .subscribe(
           () =>{
-            console.log('Dato Eliminado')
+            console.log('Registro Eliminado')
             this.mostrarTipoIdentififcacion()
             this.crearTipoIdentificacionComponent.alertaAccion('Eliminado')
           },

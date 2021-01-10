@@ -8,7 +8,7 @@ import { UsuariosI } from './../../interfaces/usuarios/usuarios'
 })
 export class UsuariosService {
 
-  URL_API = 'http://localhost:8000';
+  URL_API = 'https://localhost:44319/api';
   constructor(private http:HttpClient) { }
 
   obtenerUsuarios(){

@@ -13,9 +13,9 @@ import { CrearTipoIdentificacionComponent } from '../../tipo-identificacion/crea
 export class CrearSexoComponent implements OnInit {
 
   sexo:any = {
-    id:'',
     nombre:'',
   };
+
 
   btnTitulo:string = "Guardar";
   titulo:string = "Registrar";
@@ -36,7 +36,7 @@ export class CrearSexoComponent implements OnInit {
           res =>{
             this.sexo = res
             this.estadoEditar = true;
-            console.log(res)
+            //console.log(res)
           }
         )
     }
@@ -47,9 +47,10 @@ export class CrearSexoComponent implements OnInit {
       .agregarSexo(this.sexo)
         .subscribe(
           res => {  
-            console.log(res)
+            //console.log(res)
             this.router.navigate(['/sexo'])
             this.crearTipoIdentificacionComponent.alertaAccion('Guardado')
+	    console.log("Registro Guardado")
           },
           err=> console.log(err)
         ) 
@@ -63,6 +64,7 @@ export class CrearSexoComponent implements OnInit {
             this.sexo = res
             this.router.navigate(['/sexo'])
             this.crearTipoIdentificacionComponent.alertaAccion('Acualizados')
+	    console.log("Registro Acualizado")
           },
           err=> console.log(err)
         )

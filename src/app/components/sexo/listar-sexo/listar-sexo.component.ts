@@ -39,10 +39,10 @@ export class ListarSexoComponent implements OnInit {
         this.sexoService
         .eliminarSexo(id)
           .subscribe(
-          () =>{
-            console.log('Dato Eliminado')
+          () =>{            
             this.mostrarSexo()
             this.crearTipoIdentificacionComponent.alertaAccion('Eliminado')
+            console.log('Registro Eliminado')
           },
           err => console.log(err)
         )

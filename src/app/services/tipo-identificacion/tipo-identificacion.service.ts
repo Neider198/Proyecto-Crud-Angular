@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class TipoIdentificacionService {
 
-  URL_API = 'http://localhost:8000';
+  URL_API = 'https://localhost:44319/api';
   constructor(private http:HttpClient) { }
 
   obtenerTiposIdentificacion(){

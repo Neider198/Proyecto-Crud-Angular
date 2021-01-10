@@ -12,7 +12,6 @@ import { TipoIdentificacionI } from './../../../interfaces/tipo-identificacion/t
 export class CrearTipoIdentificacionComponent implements OnInit {
 
   tipoIdentificacion:any = {
-    id:'',
     nombre:'',
   };
   btnTitulo:string = "Guardar";
@@ -50,7 +49,7 @@ export class CrearTipoIdentificacionComponent implements OnInit {
       .agregarTipoIdentificacion(this.tipoIdentificacion)
         .subscribe(
           res => {  
-            console.log(res)
+            console.log("Registro Guardado")
             this.router.navigate(['/tipo-identificacion'])
             this.alertaAccion('Guardado')
           },
@@ -63,6 +62,7 @@ export class CrearTipoIdentificacionComponent implements OnInit {
       .editarTipoIdentificacion(this.tipoIdentificacion.id, this.tipoIdentificacion)
         .subscribe(
           res =>{
+	    console.log("Registro Acualizado")
             this.tipoIdentificacion = res
             this.router.navigate(['/tipo-identificacion'])
             this.alertaAccion('Acualizados')

@@ -18,7 +18,7 @@ export class SexoService {
   }
 
   agregarSexo(sexo){
-    return this.http.post(`${this.URL_API}/sexo/`, sexo)
+   return this.http.post(`${this.URL_API}/sexo/`, sexo)
   }
 
   editarSexo(id, sexo){
