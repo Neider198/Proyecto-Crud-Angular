@@ -13,6 +13,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 
 
@@ -31,7 +33,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatSelectModule,
     MatInputModule,
     MatSnackBarModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatMenuModule
   ],
   exports:[
     MatButtonModule,
@@ -46,7 +49,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatSelectModule,
     MatInputModule,
     MatSnackBarModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule { }

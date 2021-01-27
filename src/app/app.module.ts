@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrearUsuariosComponent } from './components/usuarios/crear-usuarios/crear-usuarios.component';
@@ -19,6 +19,9 @@ import { ConfirmacionModalComponent } from './components/confirmacion-modal/conf
 import { BotonAccionesComponent } from './components/boton-acciones/boton-acciones.component';
 import { ListarSexoComponent } from './components/sexo/listar-sexo/listar-sexo.component';
 import { CrearSexoComponent } from './components/sexo/crear-sexo/crear-sexo.component';
+import { LoginComponent } from './components/login/login.component';
+import { AutentifiacionGuard } from './guard/autentifiacion.guard';
+import { JwtintercertorService } from './services/intercertor/jwtintercertor.service';
 
 
 @NgModule({
@@ -36,6 +39,7 @@ import { CrearSexoComponent } from './components/sexo/crear-sexo/crear-sexo.comp
     BotonAccionesComponent,
     ListarSexoComponent,
     CrearSexoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,14 @@ import { CrearSexoComponent } from './components/sexo/crear-sexo/crear-sexo.comp
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AutentifiacionGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtintercertorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,15 +1,15 @@
  <mat-card style="width: 50%;margin:auto">
    <form  (ngSubmit)="estadoEditar ? editar() : agregar()" class="example-form">
       <mat-card-content>
-       <table class="example-full-width" cellspacing="0">
-          <caption> <h1>{{titulo}} Usuario</h1> </caption>
+       <table class="example-full-width" appearance="outline" cellspacing="0">
+          <caption> <h1>{{titulo}} Usuario </h1> </caption>
           <br>
           <tr>
             <td>
-              <mat-form-field class="example-full-width">
-                <mat-label>Tipo Identificacion</mat-label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Tipo Identificacion </mat-label>
                 <input type="text" 
-                       [(ngModel)]="usuarios.tipoidentificacion" 
+                       [(ngModel)]="usuarios.tipoIdentificacionNombre" 
                        name="tipoidentificacion"  
                        matInput 
                        [formControl]="myControl" 
@@ -22,7 +22,7 @@
               </mat-form-field>
             </td>
             <td>
-              <mat-form-field class="example-full-width">
+              <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Nº Identificacion</mat-label>
                 <input matInput name="identificacion" [(ngModel)]="usuarios.identificacion">
               </mat-form-field>
@@ -30,13 +30,13 @@
           </tr>
           <tr>
             <td>
-              <mat-form-field class="example-full-width">
+              <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Nombre</mat-label>
                 <input matInput name="nombres" [(ngModel)]="usuarios.nombres">
               </mat-form-field>
             </td>
             <td>
-              <mat-form-field class="example-full-width">
+              <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Apellidos</mat-label>
                 <input matInput name="apellidos" [(ngModel)]="usuarios.apellidos">
               </mat-form-field>
@@ -44,25 +44,31 @@
           </tr>
           <tr>
             <td>
-              <mat-form-field class="example-full-width">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Usuario</mat-label>
+                <input matInput readonly="{{lectura}}" name="usuario" [(ngModel)]="usuarios.usuario">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Sexo </mat-label>
-                <mat-select name="sexo" [(ngModel)]="usuarios.sexo">
+                <mat-select name="sexo" [(ngModel)]="usuarios.sexoNombre">
                   <mat-option *ngFor="let sexo of sexos" value="{{sexo.id}}">
                     {{sexo.nombre}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
             </td>
+          </tr>
+          <tr>
             <td>
-              <mat-form-field class="example-full-width">
+              <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Telefono</mat-label>
                 <input matInput name="telefono" [(ngModel)]="usuarios.telefono">
               </mat-form-field>
             </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <mat-form-field class="example-full-width">
+            <td>
+              <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Direccion</mat-label>
                 <input matInput name="direccion" [(ngModel)]="usuarios.direccion">
               </mat-form-field>

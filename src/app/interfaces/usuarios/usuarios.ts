@@ -3,7 +3,8 @@ export interface UsuariosI {
   nombres : string;
   apellidos : string;
   identificacion : string;
-  sexo : string;
+  tipoIdentificacionNombre: string;
+  sexoNombre : number;
   direccion : string;
   telefono : string
 }

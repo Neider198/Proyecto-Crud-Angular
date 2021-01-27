@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
 import { MenuService } from 'src/app/services/menu/menu.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MenuService } from 'src/app/services/menu/menu.service';
 })
 export class SidenavComponent implements OnInit {
   menus:any;
-  constructor(private menuService:MenuService ) { }
+  constructor(private menuService:MenuService, private loginService:LoginService ) { }
 
   ngOnInit(): void {
     this.mostrarMenu()

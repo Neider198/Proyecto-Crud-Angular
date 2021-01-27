@@ -42,8 +42,8 @@ export class ListarTipoIdentificacionComponent implements OnInit {
         .eliminarTipoIdentificacion(id)
         .subscribe(
           () =>{
+           this.mostrarTipoIdentififcacion()
             console.log('Registro Eliminado')
-            this.mostrarTipoIdentififcacion()
             this.crearTipoIdentificacionComponent.alertaAccion('Eliminado')
           },
           err => console.log(err)

@@ -12,7 +12,7 @@ import { CrearTipoIdentificacionComponent } from '../../tipo-identificacion/crea
 })
 export class ListarUsuariosComponent implements OnInit {
   usuarios:any = [];
-  displayedColumns: string[] = ['identificacion', 'tipoidentificacion', 'nombres', 'apellidos', 'sexo', 'telefono', 'direccion', 'acciones'];
+  displayedColumns: string[] = ['identificacion', 'tipoidentificacion', 'usuario', 'nombre', 'sexo', 'telefono', 'direccion', 'acciones'];
   dataSource:any;
 
   constructor(private usuariosService:UsuariosService, public dialog: MatDialog, private crearTipoIdentificacionComponent:CrearTipoIdentificacionComponent) { }

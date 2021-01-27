@@ -9,6 +9,7 @@ import { TipoIdentificacionService } from 'src/app/services/tipo-identificacion/
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 import { CrearTipoIdentificacionComponent } from '../../tipo-identificacion/crear-tipo-identificacion/crear-tipo-identificacion.component';
 import { TipoIdentificacionI } from '../../../interfaces/tipo-identificacion/tipo-identificacion'
+import { UsuariosI } from 'src/app/interfaces/usuarios/usuarios';
 
 @Component({
   providers:[CrearTipoIdentificacionComponent ],
@@ -31,16 +32,27 @@ export class CrearUsuariosComponent implements OnInit {
   titulo:string = "Registrar";
   estadoEditar:Boolean = false; 
   color:string = "primary"; 
+  lectura:string = "false";
   
   tiposIdentificacion:any = [
     { 'id':'', 'nombre':''},
   ];
   
-  aa:any = [
-    {nombre: 'Masry'},
-    {nombre: 'Shellssey'},
-    {nombre: 'Igor'}
-  ]
+  usuarios:any = {
+   nombres : '',
+   apellidos : '',
+   tipoIdentificacionNombre : '',
+   identificacion : '',
+   sexoNombre : '' ,
+   usuario: '',
+   direccion : '',
+   telefono : '',  
+ };
+ 
+ 
+ sexos:any = [
+   { id:'', nombre:''},
+ ];
 
   myControl = new FormControl();
   options = this.tiposIdentificacion;
@@ -55,6 +67,7 @@ export class CrearUsuariosComponent implements OnInit {
     this.titulo = "Actualizar"
     this.btnTitulo= "Actualizar"
     this.color = "accent";
+    this.lectura = "readonly";
     this.usuariosService
     .obtenerUsuario(parametros.id)
         .subscribe(
@@ -74,23 +87,6 @@ export class CrearUsuariosComponent implements OnInit {
       ); 
   }
   
-  usuarios:any = {
-    id: '',
-    nombres : '',
-    apellidos : '',
-    tipoidentificacion : '',
-    identificacion : '',
-    sexo : '',
-    direccion : '',
-    telefono : '',  
-  };
-  
-  
-    sexos:any = [
-      { id:'', nombre:''},
-    ];
-
-
 
   displayFn(user): string {
     return user && user.nombre ? user.nombre : '';
@@ -147,11 +143,14 @@ export class CrearUsuariosComponent implements OnInit {
         .subscribe(
           res =>{
             this.usuarios = res
+            
+            console.log(res)
             this.router.navigate(['/usuario'])
             this.crearTipoIdentificacionComponent.alertaAccion('Acualizados')
           },
           err=> console.log(err)
         )
+    console.log(this.usuarios)
   }
 }
 

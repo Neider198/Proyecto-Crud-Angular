@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login/login.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
   nombre = 'USER'
   @Input() sidenav:any;
 
-  constructor() { }
+  constructor(private loginService:LoginService) { }
 
   ngOnInit(): void {
   }

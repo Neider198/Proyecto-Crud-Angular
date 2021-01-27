@@ -4,8 +4,21 @@
   </button>
   <span>DJANGO - ANGULAR </span> 
   <span class="example-spacer"></span>
-  <button class="account_circle" mat-button >
+
+
+  <ng-container *ngIf="loginService.logueado()">
+    <button mat-button [matMenuTriggerFor]="menu">
+      {{nombre}}
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Perfil</button>
+      <button mat-menu-item (click)="loginService.cerraSesion()">Cerrar Sesion</button>
+    </mat-menu>
+  </ng-container>
+
+  <!-- <button class="account_circle" mat-button >
     {{nombre}}
     <mat-icon>account_circle</mat-icon>
-  </button>
+  </button> -->
 </mat-toolbar>
