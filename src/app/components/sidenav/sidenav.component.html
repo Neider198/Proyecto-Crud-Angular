@@ -1,7 +1,7 @@
 <app-header [sidenav]="sidenav"></app-header>
 <mat-sidenav-container >
-  <mat-sidenav #sidenav mode="side" opened *ngIf="loginService.logueado()" >
-    <mat-nav-list  >
+  <mat-sidenav #sidenav mode="side" opened  >
+    <mat-nav-list *ngIf="loginService.logueado()" >
       <div *ngFor="let menu of menus">
         <mat-list-item  *ngIf="menu.id == 1"  
                         color="primary" 

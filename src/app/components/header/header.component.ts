@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   nombre = 'USER'
   @Input() sidenav:any;
 
-  constructor(private loginService:LoginService) { }
+  constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
   }

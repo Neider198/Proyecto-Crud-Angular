@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   hide:boolean = true;
 
-  constructor(private loginService:LoginService, private router: Router) { }
+  constructor(public loginService:LoginService, private router: Router) { }
 
   user:any = {
     

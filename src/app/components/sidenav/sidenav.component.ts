@@ -9,7 +9,7 @@ import { MenuService } from 'src/app/services/menu/menu.service';
 })
 export class SidenavComponent implements OnInit {
   menus:any;
-  constructor(private menuService:MenuService, private loginService:LoginService ) { }
+  constructor(private menuService:MenuService, public loginService:LoginService ) { }
 
   ngOnInit(): void {
     this.mostrarMenu()
